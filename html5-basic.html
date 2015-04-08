@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html5 basic test one</title>
+	<script>
+		/*   
+			
+			the goal:
+			use dataset get li element's data-* attributes;
+
+			then, stored in the value for input box.
+			last, click button display store value.
+
+		*/
+
+		window.onload = function() {
+
+			var subBtn = document.querySelector('form'),
+				showBox = document.querySelector('input[type="text"]'),
+				userNamelists = document.querySelectorAll('#ulist > li');
+
+			Array.prototype.slice.call(userNamelists, 0).forEach(function(item) {
+
+				item.addEventListener('click', function() {
+
+					var name = this.dataset.uname;
+					showBox.value = name;
+
+				}, false);
+
+			});
+
+			subBtn.onsubmit = function() {
+
+				if(/^\s*$/.test(showBox.value)) {
+
+					alert('input not empty!');
+
+				}else {
+
+					alert(showBox.value);
+
+				}
+
+				return false;
+
+			};
+
+		};
+	</script>
+<body>
+	<form action="">
+		<input type="text" placeholder="input" autofocus>
+		<input type="submit">
+	</form>
+	<ul id="ulist">
+		<li data-uname="beans">beans</li>
+		<li data-uname="jay">jay</li>
+		<li data-uname="sola">sola</li>
+		<li data-uname="jack">jack</li>
+	</ul>
+</body>
+</html>

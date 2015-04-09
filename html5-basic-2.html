@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html5 basic test two</title>
+	<style>
+		html, body {
+			height:100%;	
+		}
+		body {
+			margin:0;
+		}
+
+		#box {
+			width:65%;
+			height:400px;
+			margin:0 auto;
+		}
+
+		.left {
+			width:75%;
+			float:left;
+			height:100%;
+			background:#fcc;
+		}
+
+		.right-box {
+			height:100%;
+			margin-left:75%;
+		}
+
+		.right {
+			width:100px;
+			height:100%
+			margin-left:20px;
+			background:#777;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div class="left">left</div>
+		<div class="right-box">
+			<div class="right">right</div>
+		</div>
+		<p>左边自适应，右边固定宽度的布局练习，利用浮动和负外边距</p>
+	</div>
+</body>
+</html>

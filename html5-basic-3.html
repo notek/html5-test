@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html5 basic test three</title>
+	<style>
+		html, body {
+			height:100%;	
+		}
+		body {
+			margin:0;
+		}
+		#box {
+			width:500px;
+			margin:3rem auto 0;
+		}
+
+		::-webkit-input-placeholder {
+			color:rgba(111, 122, 211, .5);
+		}
+
+		.frm > input {
+			width:100%;
+			outline:none;
+			color:#FF7030;
+			padding:15px 0;
+			font-size:18px;
+			text-indent: 2rem;
+			border-radius: 4px;
+			transition:all .3s;
+			border:1px solid #ddd;
+		}
+
+		.frm > span {
+			color:#FF5B49;
+			display: block;
+			line-height:1.5;
+			margin-bottom:2rem;
+		}
+
+		.frm > input[type="submit"] {
+			text-indent: 0;
+			background:#fff;
+			border-color:#6BC9FF;
+		}
+
+		.frm > input[type="submit"]:hover {
+			color:#fff;
+			cursor:pointer;
+			background:#6BC9FF;
+		}
+
+		.frm > input:focus {
+			border-color:#42CEFF;
+			box-shadow:0 0 5px 0 #2FADFF;
+		}
+
+		.frm > label {
+			font-size:20px;
+			margin-bottom:10px;
+			display: inline-block;
+		}
+
+	</style>
+</head>
+<body>
+	<section id="box">
+		<form action="" class="frm">
+			<label for="uname">your name:</label>
+			<input type="text" id="uname" placeholder="please enter your name." required pattern="\w{6,10}">
+			<span>用户名,6-10个字符之间.</span>
+			<label for="email">email address:</label>
+			<input type="email" id="email" placeholder="please enter your email address." required>
+			<span>你的邮箱地址.</span>
+			<label for="like">your likes:</label>
+			<input type="text" id="hobby" list="hobby_example" placeholder="please enter your hobby." required>
+			<span>你的兴趣爱好.</span>
+			<datalist id="hobby_example">
+				<option label="eat" value="吃货"></option>
+				<option label="play" value="耍货"></option>
+				<option label="mahogany" value="花心仔"></option>
+			</datalist>
+			<label for="pwd">password:</label>
+			<input type="password" id="pwd" placeholder="please enter your password." required pattern="\w{6,10}">
+			<span>密码,6-10个字符之间.</span>
+			<label for="pwdtoo">password again:</label>
+			<input type="password" id="pwdtoo" placeholder="please enter your password again." required pattern="\w{6,10}">
+			<span>重复密码,6-10个字符之间.</span>
+			<input type="submit" value="submit">
+		</form>
+	</section>
+</body>
+</html>

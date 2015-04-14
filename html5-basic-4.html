@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html5 basic test four</title>
+	<style>
+		body {
+			margin:0;
+		}
+		header {
+			text-align:center;
+		}
+		b {
+			width:40px;
+			height:40px;
+			border-radius:5px;
+			position: relative;
+			display: inline-block;
+			border:1px solid #eee;
+		}
+		b:after, b:before {
+			content:"";
+		}
+
+		#box {
+			margin:0 50px;
+		}
+
+		.arrow-right:before, .arrow-left:before, .arrow-top:before, .arrow-bottom:before {
+			width:0;
+			height:0;
+			position:absolute;
+			display: inline-block;
+			border:10px transparent solid;
+		}
+
+		.arrow-right:before {
+			top:10px;
+			left:15px;
+			border-right-width:0;
+			border-left-color:#999;
+		}
+		.arrow-left:before {
+			top:10px;
+			left:15px;
+			border-left-width:0;
+			border-right-color:#999;
+		}
+		.arrow-top:before {
+			top:15px;
+			left:10px;
+			border-top-width:0;
+			border-bottom-color:#999;
+		}
+		.arrow-bottom:before {
+			top:15px;
+			left:10px;
+			border-bottom-width:0;
+			border-top-color:#999;
+		}
+		.next-music:after, .prev-music:after, .broadcast:before {
+			top:10px;
+			width:0;
+			height:0;
+			position:absolute;
+			display: inline-block;
+			border:10px transparent solid;
+		}
+		.next-music:after, .broadcast:before {
+			left:12px;
+			border-right-width:0;
+			border-left-color:#999;
+		}
+		.prev-music:after {
+			right:12px;
+			border-left-width:0;
+			border-right-color:#999;
+		}
+		.next-music:before, .prev-music:before {
+			top:10px;
+			width:3px;
+			height:20px;
+			background:#999;
+			position:absolute;
+			display: inline-block;
+		}
+		.next-music:before {
+			right:12px;
+		}
+		.prev-music:before {
+			left: 12px;
+		}
+		.broadcast:after {
+			width:36px;
+			height:36px;
+			display: block;
+			border-radius: 50%;
+			border:2px solid #999;
+		}
+		.broadcast:before {
+			left:16px;
+		}
+		.mute:after, .mute:before {
+			display: block;
+			position:absolute;
+		}
+		.mute:after {
+			top:10px;
+			left:8px;
+			width:12px;
+			height:20px;
+			background:#999;
+			border-radius:4px 0 0 4px;
+		}
+		.mute:before {
+			top:2px;
+			right:8px;
+			width:0;
+			height:16px;
+			border:10px transparent solid;
+			border-left-width:0;
+			border-right-color:#999;
+		}
+		.volume-plus > b:after, .volume-plus > b:before {
+			display: block;
+			background:#999;
+			position: absolute;
+		}
+		.volume-plus > b:after {
+			top:18px;
+			right:4px;
+			width:15px;
+			height:3px;
+		}
+		.volume-plus > b:before {
+			top:12px;
+			right:10px;
+			width:3px;
+			height:15px;
+		}
+		.volume-plus:after {
+			top:13px;
+			left:4px;
+			width:10px;
+			height:14px;
+			display: block;
+			background:#999;
+			position: absolute;
+		}
+		.volume-plus:before {
+			top:5px;
+			right:20px;
+			width:0;
+			height:10px;
+			position: absolute;
+			border:10px transparent solid;
+			border-left-width:0;
+			border-right-color:#999;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h2>some icons painted using html5.</h2>
+	</header>
+	<section id="box">
+		<b class="arrow-right"></b>
+		<b class="arrow-left"></b>
+		<b class="arrow-top"></b>
+		<b class="arrow-bottom"></b>
+		<b class="next-music"></b>
+		<b class="prev-music"></b>
+		<b class="broadcast"></b>
+		<b class="mute"></b>
+		<b class="volume-plus">
+			<b></b>
+		</b>
+
+	</section>
+</body>
+</html>

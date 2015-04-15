@@ -21,6 +21,10 @@
 		b:after, b:before {
 			content:"";
 		}
+		.ico:after, .ico:before {
+			position: absolute;
+			display: inline-block;
+		}
 
 		#box {
 			margin:0 50px;
@@ -29,8 +33,6 @@
 		.arrow-right:before, .arrow-left:before, .arrow-top:before, .arrow-bottom:before {
 			width:0;
 			height:0;
-			position:absolute;
-			display: inline-block;
 			border:10px transparent solid;
 		}
 
@@ -62,8 +64,6 @@
 			top:10px;
 			width:0;
 			height:0;
-			position:absolute;
-			display: inline-block;
 			border:10px transparent solid;
 		}
 		.next-music:after, .broadcast:before {
@@ -81,8 +81,6 @@
 			width:3px;
 			height:20px;
 			background:#999;
-			position:absolute;
-			display: inline-block;
 		}
 		.next-music:before {
 			right:12px;
@@ -93,16 +91,11 @@
 		.broadcast:after {
 			width:36px;
 			height:36px;
-			display: block;
 			border-radius: 50%;
 			border:2px solid #999;
 		}
 		.broadcast:before {
 			left:16px;
-		}
-		.mute:after, .mute:before {
-			display: block;
-			position:absolute;
 		}
 		.mute:after {
 			top:10px;
@@ -121,12 +114,10 @@
 			border-left-width:0;
 			border-right-color:#999;
 		}
-		.volume-plus > b:after, .volume-plus > b:before {
-			display: block;
+		.volume-plus > b:after, .volume-plus > b:before, .volume-reduce > b:after {
 			background:#999;
-			position: absolute;
 		}
-		.volume-plus > b:after {
+		.volume-plus > b:after, .volume-reduce > b:after {
 			top:18px;
 			right:4px;
 			width:15px;
@@ -138,24 +129,171 @@
 			width:3px;
 			height:15px;
 		}
-		.volume-plus:after {
+		.volume-plus:after, .volume-reduce:after {
 			top:13px;
 			left:4px;
 			width:10px;
 			height:14px;
-			display: block;
 			background:#999;
-			position: absolute;
 		}
-		.volume-plus:before {
+		.volume-plus:before, .volume-reduce:before {
 			top:5px;
 			right:20px;
 			width:0;
 			height:10px;
-			position: absolute;
 			border:10px transparent solid;
 			border-left-width:0;
 			border-right-color:#999;
+		}
+		.block:after {
+			top:12px;
+			left:10px;
+			width:22px;
+			height:12px;
+			background:#999;
+		}
+		.block:before {
+			top:14px;
+			left:6px;
+			width: 22px;
+			height:12px;
+			border-left:2px solid #999;
+			border-bottom: 2px solid #999;
+		}
+		.lock:after {
+			top:5px;
+			left:12px;
+			width:10px;
+			height:12px;
+			border:3px solid #999;
+			border-bottom: none;
+			border-radius: 50% 50% 0 0;
+		}
+		.lock:before {
+			top:20px;
+			left:7px;
+			width:26px;
+			height:15px;
+			background:#999;
+			border-radius: 3px;
+		}
+		.unlock:after {
+			top:6px;
+			right:7px;
+			width:8px;
+			height:10px;
+			border:3px solid #999;
+			border-bottom: none;
+			border-radius: 50% 50% 0 0;
+		}
+		.unlock:before {
+			top:19px;
+			left:7px;
+			width:22px;
+			height:16px;
+			background:#999;
+			border-radius: 3px;
+		}
+		.search:after {
+			top:4px;
+			left:6px;
+			width:14px;
+			height:14px;
+			border-radius: 50%;
+			border:2px solid #999;
+		}
+		.search:before {
+			top:16px;
+			left:23px;
+			width:5px;
+			height:18px;
+			background: #999;
+			transform:rotateZ(-42deg);
+		}
+		.search > b:after {
+			top:11px;
+			left:10px;
+			width:8px;
+			height:2px;
+			background:#999;
+		}
+		.search > b:before {
+			top:8px;
+			left:13px;
+			width:2px;
+			height:8px;
+			background:#999;
+		}
+		.direc-left:after, .direc-right:after {
+			top:4px;
+			width:14px;
+			height:20px;
+			border:3px solid #999;
+			border-top:none;
+		}
+		.direc-left:after {
+			left:15px;
+			border-left:none;
+			border-radius: 0 0 20px 0;
+		}
+		.direc-right:after {
+			right:15px;			
+			border-right:none;
+			border-radius: 0 0 0 20px;
+		}
+		.direc-left:before, .direc-right:before {
+			bottom:4px;
+			border:10px solid transparent;
+		}
+		.direc-left:before {
+			left:7px;
+			border-left-width:0;
+			border-right-color: #999;
+		}
+		.direc-right:before {
+			right:7px;
+			border-right-width: 0;
+			border-left-color: #999;
+		}
+		.correct:after {
+			top:10px;
+			left:8px;
+			width:20px;
+			height:10px;
+			border:3px solid #999;
+			border-top:0;
+			border-right:0;
+			transform:rotateZ(-45deg);
+		}
+		.wrong:after, .wrong:before {
+			top:18px;
+			left:10px;
+			width:20px;
+			height:3px;
+			background:#999;
+		}
+		.wrong:after {
+			transform:rotateZ(-45deg);
+		}
+		.wrong:before {
+			transform:rotateZ(45deg);
+		}
+		.branch:after {
+			top:3px;
+			left:10px;
+			width:10px;
+			height:10px;
+			background:#fff;
+			border-radius:50%;
+			border:5px solid #999;
+		}
+		.branch:before {
+			left:11px;
+			bottom:3px;
+			border:0 solid transparent;
+			border-bottom-width:0;
+			border-width:20px 9px 0 9px;
+			border-top-color:#999;
 		}
 	</style>
 </head>
@@ -164,17 +302,31 @@
 		<h2>some icons painted using html5.</h2>
 	</header>
 	<section id="box">
-		<b class="arrow-right"></b>
-		<b class="arrow-left"></b>
-		<b class="arrow-top"></b>
-		<b class="arrow-bottom"></b>
-		<b class="next-music"></b>
-		<b class="prev-music"></b>
-		<b class="broadcast"></b>
-		<b class="mute"></b>
-		<b class="volume-plus">
-			<b></b>
+		<b class="ico arrow-right"></b>
+		<b class="ico arrow-left"></b>
+		<b class="ico arrow-top"></b>
+		<b class="ico arrow-bottom"></b>
+		<b class="ico next-music"></b>
+		<b class="ico prev-music"></b>
+		<b class="ico broadcast"></b>
+		<b class="ico mute"></b>
+		<b class="ico volume-plus">
+			<b class="ico"></b>
 		</b>
+		<b class="ico volume-reduce">
+			<b class="ico"></b>
+		</b>
+		<b class="ico block"></b>
+		<b class="ico lock"></b>
+		<b class="ico unlock"></b>
+		<b class="ico search">
+			<b class="ico"></b>
+		</b>
+		<b class="ico direc-left"></b>
+		<b class="ico direc-right"></b>
+		<b class="ico correct"></b>
+		<b class="ico wrong"></b>
+		<b class="ico branch"></b>
 
 	</section>
 </body>

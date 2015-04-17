@@ -27,9 +27,6 @@
 		.section {
 			overflow:hidden;
 		}
-		.block {
-			height:705px;
-		}
 		.block:first-child {
 			background:#A051E1;
 		}
@@ -44,9 +41,14 @@
 		window.onload = function() {
 
 			var flag = true,
-				block = document.querySelector('.block'),
+				blocks = document.querySelectorAll('.block'),
+				section = document.querySelector('.section'),
 				sectionBox = document.querySelector('.section-box');
-			sectionBox.style.height = (block.offsetHeight * 3) + 'px';
+
+			for(var i=0,len=blocks.length; i<len; i++) {
+				blocks[i].style.height = section.offsetHeight + 'px';
+			}
+			sectionBox.style.height = (section.offsetHeight * len) + 'px';
 
 			window.onmousewheel = document.onmousewheel = function(e) {
 

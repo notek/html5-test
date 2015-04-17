@@ -58,7 +58,7 @@
 
 					if(sectionBox.offsetTop === 0) return;
 					flag = false;
-					$$.buffer(sectionBox, {marginTop: sectionBox.offsetTop + block.offsetHeight}, 15, function() {
+					$$.buffer(sectionBox, {marginTop: sectionBox.offsetTop + section.offsetHeight}, 15, function() {
 						flag = true;
 					});
 					
@@ -66,9 +66,9 @@
 
 				if(detail < 0 && flag) { //bottom
 					
-					if(Math.abs(sectionBox.offsetTop) + block.offsetHeight >= sectionBox.offsetHeight) return;
+					if(Math.abs(sectionBox.offsetTop) + section.offsetHeight >= sectionBox.offsetHeight) return;
 					flag = false;
-					$$.buffer(sectionBox, {marginTop: sectionBox.offsetTop - block.offsetHeight}, 15, function() {
+					$$.buffer(sectionBox, {marginTop: sectionBox.offsetTop - section.offsetHeight}, 15, function() {
 						flag = true;
 					});
 				}

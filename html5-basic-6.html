@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html5拖拽上传</title>
+	<style>
+		body {
+			margin:0;
+		}	
+		#drop {
+			width:50%;
+			height:300px;
+			color:#C9EEFF;
+			margin:0 auto;
+			font-size:24px;
+			line-height:300px;
+			text-align: center;
+			border:2px dotted #ccc;
+			text-shadow:1px 1px 1px #ccc;
+		}
+		
+	</style>
+	<script>
+		window.onload = function() {
+			
+			var drop = document.getElementById('drop')
+				show = document.getElementById('show');
+			document.addEventListener('dragenter', function(e) {
+				e.stopPropagation();
+			    e.preventDefault();
+			}, false);
+
+			document.addEventListener('dragover', function(e) {
+				e.stopPropagation();
+			    e.preventDefault();
+			}, false);
+
+			document.addEventListener('drop', function(e) {
+				
+				e.stopPropagation();
+			    e.preventDefault();
+
+				var files = e.dataTransfer.files;
+				for(var i=0,len=files.length; i<len; i++) {
+
+					if(!files[i].type) {
+						throw new TypeError('不支持的文件类型！');
+					}
+
+					var formData = new FormData();
+					formData.append('files[]', files[i]);
+
+					var reader = new FileReader();
+					reader.readAsDataURL(files[i]);
+					reader.onload = function(e) {
+						
+						//ajax..  the XMLHttpRequest leave 2 api, use 'progress' event get upload progress bar.
+						var http = new XMLHttpRequest();
+						http.open('post', '/html5-basic-6.html', true);
+						http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+						http.onreadystatechange = function() {
+
+							var res = null;
+							if(http.readyState === 4 && http.status === 200) {
+								
+								if(http.responseText) {
+									console.log(http.responseText);
+									res = JSON.parse(http.responseText);
+									if(res.uploadedCode === '1') {
+										alert('上传成功！');
+										show.innerHTML += '<br>文件地址：' + res.uploadedUrl + '<br>mime类型:' + res.mime;
+									}
+
+								}
+
+							}
+
+						};
+						http.upload.onprogress = function(e) {
+							if (e.lengthComputable) {
+
+								var percent = e.loaded + '/' + e.total;
+								show.innerHTML = percent;
+
+							}
+						};
+						http.send(formData);
+
+					};
+
+				}
+
+			}, false);
+
+		};
+	</script>
+</head>
+<body>
+	<section id="drop"></section>
+	<p id="show"></p>
+</body>
+</html>
